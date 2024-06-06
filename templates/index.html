@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/static/styles.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+		<script defer src="/static/index.js"></script>
+
+		<title>Albanian Insight</title>
+	</head>
+	<body>
+		<header>
+			<h1>Albanian Insight</h1>
+			<p>
+				Welcome to Albanian Insight, the best place to find out more
+				about the Albanian language.
+			</p>
+			<p>
+				Place your Albanian text in the textbox, and to receive the
+				topics, the sentiment and the POS (Part of Speech) of the text
+				in both Albanian and English.
+			</p>
+		</header>
+
+		<form method="post">
+			<label for="text">Text:</label>
+			<textarea id="text" name="text" rows="4" cols="50"></textarea>
+			<button id="example-albanian" type="button">Use Example</button>
+			<input type="submit" value="Submit" />
+		</form>
+
+		<div id="loading-spinner" class="hidden">
+			<div class="spinner"></div>
+		</div>
+
+		<div class="albanian results hidden">
+			<h2>Albanian</h2>
+			<div id="albanian-sentiment" class="smiley"></div>
+			<div id="albanian-text"></div>
+			<div id="albanian-legend" class="legend"></div>
+			<canvas id="albanian-bar-chart" width="500" height="500"></canvas>
+		</div>
+
+		<div class="english results hidden">
+			<h2>English</h2>
+			<div id="english-sentiment" class="smiley"></div>
+			<div id="english-text"></div>
+			<div id="english-legend" class="legend"></div>
+			<canvas id="english-bar-chart" width="500" height="500"></canvas>
+		</div>
+	</body>
+</html>
