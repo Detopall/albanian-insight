@@ -25,6 +25,17 @@ form.addEventListener("submit", async (e) => {
 		});
 	});
 
+	// Destroy previous bar charts
+	const barCharts = document.querySelectorAll("canvas");
+	barCharts.forEach((chart) => {
+		chart.remove();
+	});
+
+	// Create new canvas elements for bar charts
+	resultsDivs.forEach((container) => {
+		container.innerHTML += `<canvas id="${container.id}-bar-chart" width="500" height="500"></canvas>`;
+	});
+
 	// Show loading spinner
 	const loadingSpinner = document.getElementById("loading-spinner");
 	loadingSpinner.classList.remove("hidden");
@@ -154,13 +165,16 @@ function displayBarChart(ctx, topics) {
 
 function displaySentiment(sentimentContainer, sentiment) {
 	let sentimentSymbol;
-	if (sentiment === 'positive') {
+	if (sentiment === 'Positive') {
 		sentimentSymbol = '😀';
-	} else if (sentiment === 'negative') {
+	} else if (sentiment === 'Negative') {
 		sentimentSymbol = '😡';
-	} else {
+	} else if (sentiment === 'Neutral') {
 		sentimentSymbol = '😐';
-	}
+	} else {
+		sentimentSymbol = '😶'
+	};
+
 	sentimentContainer.innerHTML = `<span class="sentiment">${sentimentSymbol}</span>`;
 }
 
