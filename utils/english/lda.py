@@ -12,16 +12,16 @@ from gensim.utils import simple_preprocess
 
 # Define the mapping from keywords to general topics
 topic_mapping = {
-	"Politics": {"prime", "minister", "government", "policy", "election", "vote"},
-	"Finance": {"market", "finance", "investment", "economy", "stock", "bank"},
-	"Technology": {"technology", "software", "hardware", "innovation", "tech"},
-	"Health": {"health", "medicine", "doctor", "hospital", "disease", "treatment"},
-	"Education": {"education", "school", "university", "student", "teacher", "learning"},
-	"Immigration": {"immigrant", "immigration", "camp", "refugee", "border", "Migration"},
-	"COVID-19": {"covid", "pandemic", "virus", "quarantine", "lockdown", "vaccine"},
+	"Politics": {"prime", "minister", "government", "policy", "election", "vote", "politics", "parliament", "president", "congress"},
+	"Finance": {"market", "finance", "investment", "economy", "stock", "bank", "money", "business", "trade"},
+	"Technology": {"technology", "software", "hardware", "innovation", "tech", "internet", "device", "computer", "digital"},
+	"Health": {"health", "medicine", "doctor", "hospital", "disease", "treatment", "vaccine", "patient", "care"},
+	"Education": {"education", "school", "university", "student", "teacher", "learning", "class", "college", "degree"},
+	"Immigration": {"immigrant", "immigration", "camp", "refugee", "border", "Migration", "asylum", "visa", "citizenship"},
+	"COVID-19": {"covid", "pandemic", "virus", "quarantine", "lockdown", "vaccine", "coronavirus", "mask", "social"},
 	"Time, Days": {"day", "night", "morning", "afternoon", "evening", "hour", "minute", "second", "time"},
-	"Money, Finance": {"money", "cash", "currency", "payment", "income", "expense", "debt", "credit", "savings"},
-	"Sports": {"sport", "football", "soccer", "basketball", "tennis", "athlete", "game", "match", "tournament"}
+	"Money, Finance": {"money", "cash", "currency", "payment", "income", "expense", "debt", "credit", "savings", "loan"},
+	"Sports": {"sport", "football", "soccer", "basketball", "tennis", "athlete", "game", "match", "tournament", "league"},
 }
 
 def english_predict_topics(text: str) -> Dict[str, float]:
